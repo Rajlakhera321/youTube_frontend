@@ -115,7 +115,7 @@ const VideoFrame = styled.video`
   max-height: 720px;
   width: 100%;
   object-fit: cover;
-`
+`;
 
 const Video = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -161,7 +161,7 @@ const Video = () => {
     <Container>
       <Context>
         <VideoWrapper>
-          <VideoFrame src={currentVideo.videoURL} controls/>
+          <VideoFrame src={currentVideo.videoURL} controls />
         </VideoWrapper>
         <Title>{currentVideo?.title}</Title>
         <Details>
@@ -210,9 +210,9 @@ const Video = () => {
           </Subscribe>
         </Channel>
         <Hr />
-        <Comments videoId={currentVideo._id}/>
+        <Comments videoId={currentVideo._id} />
       </Context>
-      <Recommendation tags={currentVideo.tags}/>
+      <Recommendation tags={currentVideo.tags} />
     </Container>
   );
 };

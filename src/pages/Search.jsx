@@ -14,7 +14,6 @@ const Search = () => {
   const [videos, setVideos] = useState([]);
   const query = useLocation().search;
   useEffect(() => {
-    console.log("video are getting");
     const fetchVideos = async () => {
       const res = await axios.get(`/video/search${query}`);
       console.log(res.data);
