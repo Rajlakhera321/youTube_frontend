@@ -78,7 +78,6 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const { currentUser } = useSelector((state) => state.user);
-  console.log(q, "q search box");
   return (
     <>
       <Container>

@@ -55,7 +55,6 @@ const Info = styled.div`
 
 const Card = ({ type, video }) => {
   const [channel, setChannel] = useState({});
-  console.log(video, "video and type here")
   useEffect(() => {
     const fetchChannel = async () => {
       const res = await axios.get(`/user/find/${video.userId}`);

@@ -145,7 +145,6 @@ const Upload = ({ setOpen }) => {
   const handleUpload = async (e) => {
     e.preventDefault();
     const res = await axios.post("/video", { ...inputs, tags });
-    console.log(res.data);
     setOpen(false);
     res.status === 200 && navigate(`/video/${res.data._id}`);
   };
