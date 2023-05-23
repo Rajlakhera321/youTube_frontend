@@ -9,6 +9,7 @@ import {
 import app from "../firebase";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BASE_URL } from "../util/constant";
 
 const Container = styled.div`
   width: 100%;
@@ -144,7 +145,7 @@ const Upload = ({ setOpen }) => {
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    const res = await axios.post("/video", { ...inputs, tags });
+    const res = await axios.post(`${BASE_URL}/video`, { ...inputs, tags });
     setOpen(false);
     res.status === 200 && navigate(`/video/${res.data._id}`);
   };

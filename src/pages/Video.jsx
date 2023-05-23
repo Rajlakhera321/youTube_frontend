@@ -15,6 +15,7 @@ import { dislike, fetchSuccess, like } from "../redux/videoSlice";
 import { format } from "timeago.js";
 import { subscription } from "../redux/userSlice";
 import Recommendation from "../components/Recommendation";
+import { BASE_URL } from "../util/constant";
 
 const Container = styled.div`
   display: flex;
@@ -129,9 +130,9 @@ const Video = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const videoRes = await axios.get(`/video/find/${path}`);
+        const videoRes = await axios.get(`${BASE_URL}/video/find/${path}`);
         const channelRes = await axios.get(
-          `/user/find/${videoRes.data.userId}`
+          `${BASE_URL}/user/find/${videoRes.data.userId}`
         );
         setChannel(channelRes.data.data);
         dispatch(fetchSuccess(videoRes.data));
@@ -141,19 +142,19 @@ const Video = () => {
   }, [path, dispatch]);
 
   const handleLike = async () => {
-    await axios.put(`/user/like/${currentVideo._id}`);
+    await axios.put(`${BASE_URL}/user/like/${currentVideo._id}`);
     dispatch(like(currentUser._id));
   };
 
   const handleDislike = async () => {
-    await axios.put(`/user/dislike/${currentVideo._id}`);
+    await axios.put(`${BASE_URL}/user/dislike/${currentVideo._id}`);
     dispatch(dislike(currentUser._id));
   };
 
   const handleSub = async () => {
     currentUser.data.subscribedUser.includes(channel._id)
-      ? await axios.put(`/user/unsub/${channel._id}`)
-      : await axios.put(`/user/sub/${channel._id}`);
+      ? await axios.put(`${BASE_URL}/user/unsub/${channel._id}`)
+      : await axios.put(`${BASE_URL}/user/sub/${channel._id}`);
     dispatch(subscription(channel._id));
   };
 

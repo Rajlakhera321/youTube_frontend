@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { loginFailure, loginStart, loginSuccess } from "../redux/userSlice";
 import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
+import { BASE_URL } from "../util/constant";
 
 const Container = styled.div`
   display: flex;
@@ -77,7 +78,7 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auth/login", { email, password });
+      const res = await axios.post(`${BASE_URL}/auth/login`, { email, password });
       dispatch(loginSuccess(res.data));
     } catch (error) {
       dispatch(loginFailure());
@@ -87,7 +88,7 @@ const SignIn = () => {
   const signinWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        axios.post("/auth/google", {
+        axios.post(`${BASE_URL}/auth/google`, {
           name: result.user.displayName,
           email: result.user.email,
           img: result.user.photoURL,
@@ -104,7 +105,7 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      res = await axios.post("/auth/signup", { name, email, password });
+      res = await axios.post(`${BASE_URL}/auth/signup`, { name, email, password });
       console.log(res)
       dispatch(loginSuccess(res.data));
     } catch (error) {

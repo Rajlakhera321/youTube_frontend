@@ -1,0 +1,1 @@
+export const BASE_URL = "https://indiatube-clone.onrender.com/api/"

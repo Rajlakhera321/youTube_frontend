@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Card from "../components/Card";
+import { BASE_URL } from "../util/constant";
 
 const Container = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const Search = () => {
   const query = useLocation().search;
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`/video/search${query}`);
+      const res = await axios.get(`${BASE_URL}/video/search${query}`);
       setVideos(res.data);
     };
     fetchVideos();

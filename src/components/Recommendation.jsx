@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Card from './Card';
+import { BASE_URL } from '../util/constant';
 
 const Container = styled.div`
     flex: 2;
@@ -12,7 +13,7 @@ const Recommendation = ({tags}) => {
 
     useEffect(() => {
         const fetchVideos = async () => {
-            const res = await axios.get(`/video/tag?tag=${tags}`);
+            const res = await axios.get(`${BASE_URL}/video/tag?tag=${tags}`);
             setVideos(res.data)
         }
         fetchVideos()
