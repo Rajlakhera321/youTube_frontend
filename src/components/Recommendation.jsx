@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Card from './Card';
-import { BASE_URL } from '../util/constant';
+import { BASE_URL } from '../constant';
 
 const Container = styled.div`
     flex: 2;

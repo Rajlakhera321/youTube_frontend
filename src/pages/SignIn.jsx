@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { loginFailure, loginStart, loginSuccess } from "../redux/userSlice";
 import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
-import { BASE_URL } from "../util/constant";
+import { BASE_URL } from "../constant";
 
 const Container = styled.div`
   display: flex;

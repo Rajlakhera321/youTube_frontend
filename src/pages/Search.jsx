@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Card from "../components/Card";
-import { BASE_URL } from "../util/constant";
+import { BASE_URL } from "../constant";
 
 const Container = styled.div`
   display: flex;

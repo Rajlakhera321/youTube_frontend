@@ -9,7 +9,7 @@ import {
 import app from "../firebase";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { BASE_URL } from "../util/constant";
+import { BASE_URL } from "../constant";
 
 const Container = styled.div`
   width: 100%;

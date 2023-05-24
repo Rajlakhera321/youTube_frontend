@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { format } from "timeago.js";
-import { BASE_URL } from "../util/constant";
+import { BASE_URL } from "../constant";
 
 const Container = styled.div`
   width: ${(props) => props.type !== "sm" && "360px"};

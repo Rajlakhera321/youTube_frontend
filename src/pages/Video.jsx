@@ -15,7 +15,7 @@ import { dislike, fetchSuccess, like } from "../redux/videoSlice";
 import { format } from "timeago.js";
 import { subscription } from "../redux/userSlice";
 import Recommendation from "../components/Recommendation";
-import { BASE_URL } from "../util/constant";
+import { BASE_URL } from "../constant";
 
 const Container = styled.div`
   display: flex;

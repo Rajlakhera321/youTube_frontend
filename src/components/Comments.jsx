@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Comment from "./Comment";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { BASE_URL } from "../util/constant";
+import { BASE_URL } from "../constant";
 
 const Container = styled.div``;
 
